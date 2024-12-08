@@ -1,20 +1,17 @@
-package syndexmx.github.com.musicstruct.services.impl;
+package com.github.syndexmx.musicstruct.services.impl;
 
+import com.github.syndexmx.musicstruct.domain.Artist;
+import com.github.syndexmx.musicstruct.entities.ArtistEntity;
+import com.github.syndexmx.musicstruct.repositories.ArtistRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
-import syndexmx.github.com.musicstruct.domain.Artist;
-import syndexmx.github.com.musicstruct.entities.ArtistEntity;
-import syndexmx.github.com.musicstruct.repositories.ArtistRepository;
-import syndexmx.github.com.musicstruct.services.ArtistService;
+import com.github.syndexmx.musicstruct.services.ArtistService;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
-import static syndexmx.github.com.musicstruct.entities.ArtistEntity.artistEntityToArtist;
-import static syndexmx.github.com.musicstruct.entities.ArtistEntity.artistToArtistEntity;
 
 @Service
 @Slf4j
@@ -35,15 +32,15 @@ public class ArtistServiceImpl implements ArtistService {
             spoofId = UUID.randomUUID().toString();
         } while (artistRepository.existsById(UUID.fromString(spoofId)));
         artist.setArtistId(spoofId);
-        final ArtistEntity savedEntity = artistRepository.save(artistToArtistEntity(artist));
-        final Artist savedArtist = artistEntityToArtist(savedEntity);
+        final ArtistEntity savedEntity = artistRepository.save(ArtistEntity.artistToArtistEntity(artist));
+        final Artist savedArtist = ArtistEntity.artistEntityToArtist(savedEntity);
         return savedArtist;
     }
 
     @Override
     public Artist save(Artist artist) {
-        final ArtistEntity savedEntity = artistRepository.save(artistToArtistEntity(artist));
-        final Artist savedArtist = artistEntityToArtist(savedEntity);
+        final ArtistEntity savedEntity = artistRepository.save(ArtistEntity.artistToArtistEntity(artist));
+        final Artist savedArtist = ArtistEntity.artistEntityToArtist(savedEntity);
         return savedArtist;
     }
 
@@ -52,7 +49,7 @@ public class ArtistServiceImpl implements ArtistService {
         final Optional<ArtistEntity> artistEntityFound = artistRepository
                 .findById(UUID.fromString(artistId));
         final Optional<Artist> artistFound = artistEntityFound.map(artistEntity ->
-                artistEntityToArtist(artistEntity));
+                ArtistEntity.artistEntityToArtist(artistEntity));
         return artistFound;
     }
 
@@ -60,7 +57,7 @@ public class ArtistServiceImpl implements ArtistService {
     public List<Artist> listArtist() {
         final List<ArtistEntity> listOfFoundArtistEntities = artistRepository.findAll();
         final List<Artist> listOfFoundArtist =listOfFoundArtistEntities.stream()
-                .map(entity -> artistEntityToArtist(entity)).toList();
+                .map(entity -> ArtistEntity.artistEntityToArtist(entity)).toList();
         return listOfFoundArtist;
     }
 

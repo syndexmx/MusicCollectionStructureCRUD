@@ -1,23 +1,32 @@
-package syndexmx.github.com.musicstruct.dtos;
-
-import syndexmx.github.com.musicstruct.domain.Artist;
+package com.github.syndexmx.musicstruct.dtos;
 
 
-public class ArtistDtoMapper {
+import com.github.syndexmx.musicstruct.domain.Artist;
+import lombok.*;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
+@Builder
+public class ArtistDto {
+
+    private String artistId;
+
+    private String artistName;
 
     public static ArtistDto artistToArtistDto(Artist artist) {
-        final ArtistDto artistDto = ArtistDto.builder()
+        return ArtistDto.builder()
                 .artistId(artist.getArtistId())
                 .artistName(artist.getArtistName())
                 .build();
-        return artistDto;
     }
 
     public static Artist artistDtoToArtist(ArtistDto artistDto) {
-        Artist artist = Artist.builder()
+        return Artist.builder()
                 .artistId(artistDto.getArtistId())
                 .artistName(artistDto.getArtistName())
                 .build();
-        return artist;
     }
+
 }

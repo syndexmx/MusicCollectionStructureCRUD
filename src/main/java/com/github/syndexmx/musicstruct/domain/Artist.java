@@ -1,17 +1,16 @@
-package syndexmx.github.com.musicstruct.dtos;
-
+package com.github.syndexmx.musicstruct.domain;
 
 import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Builder
-public class ArtistDto {
+@Getter
+@Setter
+public class Artist {
 
     private String artistId;
 
     private String artistName;
-
 
 }

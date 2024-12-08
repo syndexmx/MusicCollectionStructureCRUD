@@ -1,8 +1,8 @@
-package syndexmx.github.com.musicstruct.services;
+package com.github.syndexmx.musicstruct.services;
 
 
+import com.github.syndexmx.musicstruct.domain.Artist;
 import org.springframework.stereotype.Service;
-import syndexmx.github.com.musicstruct.domain.Artist;
 
 import java.util.List;
 import java.util.Optional;

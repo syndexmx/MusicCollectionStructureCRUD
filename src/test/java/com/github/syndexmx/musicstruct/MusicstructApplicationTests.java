@@ -1,4 +1,4 @@
-package syndexmx.github.com.musicstruct;
+package com.github.syndexmx.musicstruct;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

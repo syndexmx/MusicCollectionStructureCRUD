@@ -1,20 +1,21 @@
-package syndexmx.github.com.musicstruct.entities;
+package com.github.syndexmx.musicstruct.entities;
 
 
+import com.github.syndexmx.musicstruct.domain.Artist;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
-import syndexmx.github.com.musicstruct.domain.Artist;
 
 import java.util.UUID;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
+@Setter
+@Entity
 @Table(name = "artists")
 public class ArtistEntity {
 

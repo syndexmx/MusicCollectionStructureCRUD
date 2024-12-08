@@ -1,18 +1,18 @@
-package syndexmx.github.com.musicstruct.controllers;
+package com.github.syndexmx.musicstruct.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import syndexmx.github.com.musicstruct.domain.Artist;
-import syndexmx.github.com.musicstruct.dtos.ArtistDto;
-import syndexmx.github.com.musicstruct.services.ArtistService;
+import com.github.syndexmx.musicstruct.domain.Artist;
+import com.github.syndexmx.musicstruct.dtos.ArtistDto;
+import com.github.syndexmx.musicstruct.services.ArtistService;
 
 import java.util.List;
 import java.util.Optional;
 
-import static syndexmx.github.com.musicstruct.dtos.ArtistDtoMapper.artistDtoToArtist;
-import static syndexmx.github.com.musicstruct.dtos.ArtistDtoMapper.artistToArtistDto;
+import static com.github.syndexmx.musicstruct.dtos.ArtistDto.artistDtoToArtist;
+import static com.github.syndexmx.musicstruct.dtos.ArtistDto.artistToArtistDto;
 
 
 @RestController

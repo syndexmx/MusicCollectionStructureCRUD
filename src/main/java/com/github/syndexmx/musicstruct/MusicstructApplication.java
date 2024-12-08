@@ -1,4 +1,4 @@
-package syndexmx.github.com.musicstruct;
+package com.github.syndexmx.musicstruct;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,9 +1,9 @@
-package syndexmx.github.com.musicstruct.repositories;
+package com.github.syndexmx.musicstruct.repositories;
 
 
+import com.github.syndexmx.musicstruct.entities.ArtistEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import syndexmx.github.com.musicstruct.entities.ArtistEntity;
 
 import java.util.UUID;
 
