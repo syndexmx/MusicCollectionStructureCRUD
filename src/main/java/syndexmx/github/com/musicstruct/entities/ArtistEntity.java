@@ -31,7 +31,7 @@ public class ArtistEntity {
     public static ArtistEntity artistToArtistEntity(Artist artist) {
         final ArtistEntity artistEntity = ArtistEntity.builder()
                 .artistId(UUID.fromString(artist.getArtistId()))
-                .artistString(artist.getArtistString())
+                .artistString(artist.getArtistName())
                 .build();
         return artistEntity;
     }
@@ -39,7 +39,7 @@ public class ArtistEntity {
     public static Artist artistEntityToArtist(ArtistEntity artistEntity) {
         Artist artist = Artist.builder()
                 .artistId(artistEntity.getArtistId().toString())
-                .artistString(artistEntity.getArtistString())
+                .artistName(artistEntity.getArtistString())
                 .build();
         return artist;
 

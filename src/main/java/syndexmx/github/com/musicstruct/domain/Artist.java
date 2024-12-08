@@ -13,6 +13,6 @@ public class Artist {
 
     private String artistId;
 
-    private String artistString;
+    private String artistName;
 
 }

@@ -6,7 +6,7 @@ public class ArtistDtoMapper {
     public static ArtistDto artistToArtistDto(Artist artist) {
         final ArtistDto artistDto = ArtistDto.builder()
                 .artistId(artist.getArtistId())
-                .artistString(artist.getArtistString())
+                .artistName(artist.getArtistName())
                 .build();
         return artistDto;
     }
@@ -14,7 +14,7 @@ public class ArtistDtoMapper {
     public static Artist artistDtoToArtist(ArtistDto artistDto) {
         Artist artist = Artist.builder()
                 .artistId(artistDto.getArtistId())
-                .artistString(artistDto.getArtistString())
+                .artistName(artistDto.getArtistName())
                 .build();
         return artist;
     }
