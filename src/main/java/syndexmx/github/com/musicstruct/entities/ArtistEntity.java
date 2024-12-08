@@ -14,7 +14,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Data
 @Getter
 @Table(name = "artists")
 public class ArtistEntity {
