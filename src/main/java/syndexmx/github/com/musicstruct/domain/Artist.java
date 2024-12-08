@@ -1,13 +1,11 @@
 package syndexmx.github.com.musicstruct.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
 @Data
 public class Artist {
 
