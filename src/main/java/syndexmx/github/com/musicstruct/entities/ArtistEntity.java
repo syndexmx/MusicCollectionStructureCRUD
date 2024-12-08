@@ -18,20 +18,20 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Data
-@Table(name = "artists_table")
+@Table(name = "artists")
 public class ArtistEntity {
 
     @Id
     @Column(name = "artist_id")
     private UUID artistId;
 
-    @Column(name = "artist_string")
-    private String artistString;
+    @Column(name = "artist_name")
+    private String artistName;
 
     public static ArtistEntity artistToArtistEntity(Artist artist) {
         final ArtistEntity artistEntity = ArtistEntity.builder()
                 .artistId(UUID.fromString(artist.getArtistId()))
-                .artistString(artist.getArtistName())
+                .artistName(artist.getArtistName())
                 .build();
         return artistEntity;
     }
@@ -39,7 +39,7 @@ public class ArtistEntity {
     public static Artist artistEntityToArtist(ArtistEntity artistEntity) {
         Artist artist = Artist.builder()
                 .artistId(artistEntity.getArtistId().toString())
-                .artistName(artistEntity.getArtistString())
+                .artistName(artistEntity.getArtistName())
                 .build();
         return artist;
 

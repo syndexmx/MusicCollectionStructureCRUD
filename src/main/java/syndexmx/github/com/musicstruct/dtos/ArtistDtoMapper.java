@@ -2,7 +2,9 @@ package syndexmx.github.com.musicstruct.dtos;
 
 import syndexmx.github.com.musicstruct.domain.Artist;
 
+
 public class ArtistDtoMapper {
+
     public static ArtistDto artistToArtistDto(Artist artist) {
         final ArtistDto artistDto = ArtistDto.builder()
                 .artistId(artist.getArtistId())
